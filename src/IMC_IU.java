@@ -1,3 +1,6 @@
+
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -39,6 +42,11 @@ public class IMC_IU extends javax.swing.JFrame {
         jLabel2.setText("ALTURA");
 
         btncalcular.setText("CALCULAR IMC");
+        btncalcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btncalcularActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -75,6 +83,16 @@ public class IMC_IU extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btncalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncalcularActionPerformed
+        // TODO add your handling code here:
+        double peso = Double.parseDouble(txtpeso.getText());
+        double altura = Double.parseDouble(txtaltura.getText());
+        
+        double imc = peso / (altura * altura);
+        
+        JOptionPane.showMessageDialog(null, "IMC: " + imc);
+    }//GEN-LAST:event_btncalcularActionPerformed
 
     /**
      * @param args the command line arguments
